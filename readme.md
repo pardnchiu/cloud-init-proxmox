@@ -1,9 +1,21 @@
-# Import Cloud-init Debian 12 / RedHat 9 to Proxmox
+# Import Cloud-init RedHat 9 / Debian 12 / Ubuntu 23 to Proxmox
 
-```sh
-wget https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2;
-qm.sh -i 998 -s storage -p debian-12-generic-amd64.qcow2;
-```
+- Proxmox 8.1.3
+- storage ZFS
+- RedHat 9.3
+  ```sh
+  qm.sh -i 999 -s storage -p rhel-9.3-x86_64-kvm.qcow2;
+  ```
+- Debian 12
+  ```sh
+  wget https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2;
+  qm.sh -i 998 -s storage -p debian-12-generic-amd64.qcow2;
+  ```
+- Ubuntu 23.04
+  ```sh
+  wget https://cloud-images.ubuntu.com/lunar/current/lunar-server-cloudimg-amd64.img;
+  qm.sh -i 997 -s storage -p lunar-server-cloudimg-amd64.img;
+  ```
 
 ```sh
 -i, --id [VMID]
